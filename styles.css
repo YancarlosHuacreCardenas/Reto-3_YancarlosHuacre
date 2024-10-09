@@ -1,0 +1,152 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and global settings */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el footer esté al final */
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #026c7c; /* Color de fondo del header */
+    padding: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 150px; /* Ajusta el tamaño según lo necesites */
+    margin-right: 10px;
+}
+
+nav ul {
+    display: flex; /* Muestra el menú por defecto en pantallas grandes */
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    background-color: transparent; /* Color de fondo inicial */
+    color: white; /* Color del texto en el menú */
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px; /* Espacio alrededor del texto e ícono */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Suaviza la transición de color de fondo y texto */
+}
+
+/* Menú interactivo */
+.menu-icon {
+    display: none; /* Oculta el ícono de hamburguesa por defecto */
+    width: 20px; /* Cambia el tamaño según lo necesites */
+    margin-right: 5px; /* Espacio entre la imagen y el texto */
+}
+
+/* Efecto de cambio de color al pasar el mouse */
+nav ul li a:hover {
+    background-color: rgba(255, 165, 0, 0.915); /* Cambia el color de fondo a naranja al pasar el mouse */
+    color: black; /* Cambia el color del texto al pasar el mouse */
+}
+
+/* Main Section Styling */
+.hero {
+    position: relative;
+    height: 80vh; /* Altura de la sección */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+}
+
+.hero-image {
+    position: absolute; /* Imagen en posición absoluta */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ancho de la imagen */
+    height: 100%; /* Altura de la imagen */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    z-index: 1; /* Asegura que la imagen esté detrás del texto */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Capa semitransparente */
+    z-index: 2; /* Asegura que el overlay esté sobre la imagen */
+}
+
+.hero h2 {
+    position: relative;
+    color: white;
+    font-size: 48px;
+    z-index: 3; /* Asegura que el texto esté por encima del overlay */
+    text-align: center;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #026c7c; /* Color del footer */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%; /* Asegura que el footer cubra todo el ancho */
+    margin-top: auto; /* Asegura que el footer se mantenga al final */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Ocultar el menú en pantallas pequeñas */
+    }
+
+    .menu-icon {
+        display: block; /* Muestra el ícono de hamburguesa en pantallas pequeñas */
+        width: 30px; /* Ajusta el tamaño */
+        margin-left: auto; /* Alínea el ícono a la derecha */
+        cursor: pointer; /* Cambia el cursor al pasar por encima */
+    }
+
+    nav ul.responsive {
+        flex-direction: column; /* Cambia a columna */
+        display: flex; /* Muestra el menú cuando está activo */
+        position: absolute; /* Posiciona el menú de forma absoluta */
+        top: 80px; /* Aumenta este valor para mover el menú más abajo */
+        left: 0; /* Alinea el menú a la izquierda */
+        background-color: #026c7c; /* Color de fondo del menú */
+        border-radius: 5px; /* Bordes redondeados */
+        padding: 10px; /* Espacio interno del menú */
+        width: 100%; /* Ancho completo del menú */
+        z-index: 5; /* Asegura que el menú esté por encima de otros elementos */
+    }
+
+    nav ul li {
+        margin-bottom: 10px; /* Espacio entre los ítems del menú */
+    }
+
+    .hero h2 {
+        font-size: 36px; /* Tamaño del texto en pantallas pequeñas */
+    }
+}
